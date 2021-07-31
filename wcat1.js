@@ -57,25 +57,47 @@ if(isSPresent){
 // console.log(contentArr.join("\n"));
 
 //  3)  -n
-let isNPresent=optionArr.includes("-n");
-if(isNPresent){
-    for(let i=0;i<contentArr.length;i++){
-        contentArr[i]=(i+1)+" "+contentArr[i];
-    }
-}
+// let isNPresent=optionArr.includes("-n");
+// if(isNPresent){
+//     for(let i=0;i<contentArr.length;i++){
+//         contentArr[i]=(i+1)+" "+contentArr[i];
+//     }
+// }
 // console.log(contentArr.join("\n"));
 
 
 // 4) -b
 
-let isBPresent=optionArr.includes("-b");
-if(isBPresent){
-    let c=1;
- for(let i=0;i<contentArr.length;i++){
-     if(contentArr[i]!=""){
-         contentArr[i]=c+" "+contentArr[i];
-         c++;
-     }
- }   
+// let isBPresent=optionArr.includes("-b");
+// if(isBPresent){
+//     let c=1;
+//  for(let i=0;i<contentArr.length;i++){
+//      if(contentArr[i]!=""){
+//          contentArr[i]=c+" "+contentArr[i];
+//          c++;
+//      }
+//  }   
+// }
+// console.log(contentArr.join("\n"));
+
+//  5)  Mixing
+let isBothPresent=optionArr.includes("-n") && optionArr.includes("-b");
+if(isBothPresent){
+    let firstOption=optionArr[0];
+    if(firstOption=="-n"){
+        for(let i=0;i<contentArr.length;i++){
+            contentArr[i]=(i+1)+" "+contentArr[i];
+        }
+    }
+    else if(firstOption=="-b"){
+        let c=1;
+        for(let i=0;i<contentArr.length;i++){
+            if(contentArr[i]!=""){
+                contentArr[i]=c+" "+contentArr[i];
+                c++;
+            }
+        }   
+ 
+    }
+    console.log(contentArr.join("\n"));
 }
-console.log(contentArr.join("\n"));
